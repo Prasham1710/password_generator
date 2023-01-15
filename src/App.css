@@ -20,7 +20,7 @@
 }
 
 .generator__password {
-  
+  position: relative;
   background: rgba(0, 0, 0, 0.4);
   padding: 13px 10px;
   color: #fff;
