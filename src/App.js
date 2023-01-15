@@ -99,8 +99,10 @@ import { COPY_SUCCESS } from './Message'
     }
         
           return (
-          <div className= 'bg-[#3b3b98] h-[700px] relative'>
-        <div className='container'>
+          <div className= ' h-[700px] relative'>
+             <img className ='absolute w-full h-full object-cover mix-blend-overlay'src ='https://img.lovepik.com/photo/50055/7195.jpg_wh300.jpg'/>
+           <div className="flex relative justify-center pt-[100px]"><p  className="text-5xl bg-white">Generate  password</p> </div>
+        <div className='hover: pt-[50px] pl-[570px] pr-[570px] relative'>
           < div className='generator'>
             <h2 className='generator__header'>Password Generator</h2>
             <div className='generator__password'>
