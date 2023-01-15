@@ -15,18 +15,20 @@
   const [includeLowercase, setIncludeLowercase] = useState(false)
   const [includeNumbers, setIncludeNumbers] = useState(false)
   const [includeSymbols, setIncludeSymbols] = useState(false)
+      
         const handleGeneratePassword = (e) => {
           
           let characterList =''
     if (includeLowercase) {
-        characterList = characterList + lowerCaseLetters}
-        if (includeUppercase) {
+        characterList = characterList + lowerCaseLetters
+      }
+    if (includeUppercase) {
         characterList = characterList + upperCaseLetters
       }
-      if (includeNumbers) {
+    if (includeNumbers) {
         characterList = characterList + numbers
       }
-      if (includeSymbols) {
+    if (includeSymbols) {
         characterList = characterList + specialCharacters
       }
         setPassword(createPassword(characterList))
@@ -41,13 +43,23 @@
     }
     return password
   }
+  const copyToClipboard = () => {
+    const newTextArea = document.createElement('textarea')
+    newTextArea.innerText = password
+    document.body.appendChild(newTextArea)
+    newTextArea.select()
+    document.execCommand('copy')
+    newTextArea.remove()
+  }
+    const handleCopyPassword = (e) => {
+       copyToClipboard()}
         return (
          <div className= 'bg-[#3b3b98] h-[700px] relative'>
       <div className='container'>
         < div className='generator'>
           <h2 className='generator__header'>Password Generator</h2>
           <div className='generator__password'>
-            <h3>{password}</h3></div>
+            <h3>{password}</h3><button onClick={handleCopyPassword} className='copy__btn'><BsClipboard/></button></div>
                   
                     <div>
                       <div className='form-group'>
