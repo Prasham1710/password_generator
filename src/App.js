@@ -94,6 +94,9 @@ import { COPY_SUCCESS } from './Message'
       notify(COPY_SUCCESS)
     }
         }
+        let reload = () => {
+      window.location.reload()
+    }
         
           return (
           <div className= 'bg-[#3b3b98] h-[700px] relative'>
@@ -132,7 +135,11 @@ import { COPY_SUCCESS } from './Message'
                           <input checked={includeSymbols} 
                           onChange={(e) => setIncludeSymbols(e.target.checked)}type='checkbox' id ='Include Symbols '/>
                         </div>
-                        <button  onClick={handleGeneratePassword}className="bg-purple-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Generate Password </button>
+                        <div className="flex items-center pt-3 justify-center"><button  onClick={handleGeneratePassword}className=" bg-purple-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none  focus:shadow-outline">Generate Password </button></div>
+                        
+                        <div className="flex items-center pt-3 justify-center"><button className="bg-purple-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none  focus:shadow-outline"
+          onClick={reload} 
+          type='submit'>Reload</button></div>
                           <ToastContainer
             position='top-center'
             autoClose={5000}
