@@ -87,8 +87,14 @@ import { COPY_SUCCESS } from './Message'
         } 
       }
       const handleCopyPassword = (e) => {
-        copyToClipboard()
-      notify(COPY_SUCCESS)}
+        if (password ===''){
+          notify('Nothing to Copy',true)
+        } else{
+          copyToClipboard()
+      notify(COPY_SUCCESS)
+    }
+        }
+        
           return (
           <div className= 'bg-[#3b3b98] h-[700px] relative'>
         <div className='container'>
