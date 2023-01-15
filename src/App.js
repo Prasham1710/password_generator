@@ -1,4 +1,4 @@
-        import React from 'react'
+import React from 'react'
         import { toast, ToastContainer } from 'react-toastify'
         import './App.css'
         import {BsClipboard} from 'react-icons/bs'
@@ -9,6 +9,8 @@
       lowerCaseLetters,
       specialCharacters,
     } from './Characters'
+    import 'react-toastify/dist/ReactToastify.css'
+import { COPY_SUCCESS } from './Message'
         function App() {
     const [password, setPassword] = useState('')
     const [passwordLength, setPasswordLength] = useState(20)
@@ -18,6 +20,14 @@
     const [includeSymbols, setIncludeSymbols] = useState(false)
         
           const handleGeneratePassword = (e) => {
+            if (
+      !includeUppercase &&
+      !includeLowercase &&
+      !includeNumbers &&
+      !includeSymbols
+    ) {
+      notify('You must Select atleast one option',true)
+    }
             
             let characterList =''
       if (includeLowercase) {
@@ -52,8 +62,33 @@
       document.execCommand('copy')
       newTextArea.remove()
     }
+      const notify = (Message,hasError = false )=>{
+        if (hasError){
+          toast.error(Message, {
+        position: 'top-center',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      })
+        } else {
+        toast(Message, {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+        } 
+      }
       const handleCopyPassword = (e) => {
-        copyToClipboard()}
+        copyToClipboard()
+      notify(COPY_SUCCESS)}
           return (
           <div className= 'bg-[#3b3b98] h-[700px] relative'>
         <div className='container'>
@@ -92,8 +127,17 @@
                           onChange={(e) => setIncludeSymbols(e.target.checked)}type='checkbox' id ='Include Symbols '/>
                         </div>
                         <button  onClick={handleGeneratePassword}className="bg-purple-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Generate Password </button>
-                          
-                        
+                          <ToastContainer
+            position='top-center'
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+          />  
                       </div>
                     </div>
                     </div>
