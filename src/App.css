@@ -40,3 +40,9 @@
   right: 3px;
 }
 
+.form-group {
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+  margin-bottom: 15px;
+}

@@ -50,30 +50,30 @@
             <h3>{password}</h3></div>
                   
                     <div>
-                      <div>
+                      <div className='form-group'>
                         <label className='pr-16'>Password length</label>
                         <input className=' border rounded  w-[50px] text-gray-700 leading-tight focus:outline-none ' defaultValue={passwordLength} 
                         onChange={(e) =>setPasswordLength(e.target.value)} type='number' max='20'min='10' id='password-strength' 
                         name='password-strength'></input>
                         </div>
-                        <div>
+                        <div className='form-group'>
                           <label >Include Uppercase Letters</label>
                           <input checked={includeUppercase} 
                           onChange={(e) => setIncludeUppercase(e.target.checked)}type='checkbox' id='uppercase-letters'
               name='uppercase-letters'/>
                         </div>
-                        <div>
+                        <div className='form-group'>
                           <label >Include Lowercase Letters</label>
                           <input checked={includeLowercase}
                           onChange={(e) => setIncludeLowercase(e.target.checked)} type='checkbox' id='lowercase-letters'
               name='lowercase-letters'/>
                         </div>
-                        <div>
+                        <div className='form-group'>
                         <label >Include Numbers</label>
                         <input checked={includeNumbers}
                         onChange={(e) => setIncludeNumbers(e.target.checked)} type='checkbox' id ='Include Numbers'/>
                       </div>
-                      <div>
+                      <div className='form-group'>
                         <label >Include Symbols</label>
                         <input checked={includeSymbols} 
                         onChange={(e) => setIncludeSymbols(e.target.checked)}type='checkbox' id ='Include Symbols '/>
