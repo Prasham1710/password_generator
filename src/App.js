@@ -13,7 +13,7 @@ import React from 'react'
 import { COPY_SUCCESS } from './Message'
         function App() {
     const [password, setPassword] = useState('')
-    const [passwordLength, setPasswordLength] = useState(20)
+    const [passwordLength, setPasswordLength] = useState(12)
     const [includeUppercase, setIncludeUppercase] = useState(false)
     const [includeLowercase, setIncludeLowercase] = useState(false)
     const [includeNumbers, setIncludeNumbers] = useState(false)
@@ -112,7 +112,7 @@ import { COPY_SUCCESS } from './Message'
                         <div className='form-group'>
                           <label className='pr-16'>Password length</label>
                           <input className=' border rounded  w-[50px] text-gray-700 leading-tight focus:outline-none ' defaultValue={passwordLength} 
-                          onChange={(e) =>setPasswordLength(e.target.value)} type='number' max='20'min='10' id='password-strength' 
+                          onChange={(e) =>setPasswordLength(e.target.value)} type='number' max='20'min='8' id='password-strength' 
                           name='password-strength'></input>
                           </div>
                           <div className='form-group'>
