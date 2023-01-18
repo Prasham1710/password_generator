@@ -104,7 +104,7 @@ import { COPY_SUCCESS } from './Message'
            <div className="flex relative justify-center pt-[120px] pb-30"><p  className="text-5xl bg-white">Generate  password</p> </div>
         <div className="flex relative justify-center items-center h-full  pt-6 pb-16">
           < div className='bg-[#23235b] h-[450px] w-[400px] px-8 py-4 pt-6 pb-8 mb-4'>
-            <h2 className='generator__header'>Password Generator</h2>
+            <div className=''><h2 className='text-white pl-24'>Password Generator</h2></div>
             <div className='generator__password'>
               <h3>{password}</h3><button onClick={handleCopyPassword} className='copy__btn'><BsClipboard/></button></div>
                     
