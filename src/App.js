@@ -97,7 +97,6 @@ import { COPY_SUCCESS } from './Message'
         let reload = () => {
       window.location.reload()
     }
-        
           return (
           <div className="relative">
              <img className ='absolute w-full h-full object-cover mix-blend-overlay'src ='https://img.lovepik.com/photo/50055/7195.jpg_wh300.jpg'/>
